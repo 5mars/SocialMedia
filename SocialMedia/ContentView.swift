@@ -1,19 +1,10 @@
-//
-//  ContentView.swift
-//  SocialMedia
-//
-//  Created by Jeremy Cinq-Mars on 2024-02-15.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+
+            Text("I'm testing push/pull git with xcode")
         }
         .padding()
     }
