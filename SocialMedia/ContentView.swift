@@ -5,6 +5,7 @@ struct ContentView: View {
         VStack {
 
             Text("I'm testing push/pull git with xcode")
+            Image(systemName: "checkmark.circle")
         }
         .padding()
     }
