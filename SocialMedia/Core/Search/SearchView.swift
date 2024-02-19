@@ -27,7 +27,7 @@ struct SearchView: View {
                                 
                                 Spacer()
                             }
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("textColor"))
                             .padding(.horizontal)
                         }
                     }

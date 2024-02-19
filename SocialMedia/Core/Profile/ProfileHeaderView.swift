@@ -48,7 +48,7 @@ struct ProfileHeaderView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity, minHeight: 32)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color("textColor"))
                     .overlay {
                         RoundedRectangle(cornerRadius: 6)
                             .stroke(Color.gray, lineWidth: 1.0)

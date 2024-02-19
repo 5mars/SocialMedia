@@ -57,7 +57,7 @@ struct FeedCell: View {
                     
                 }
                 .padding(.top, 4)
-                .foregroundStyle(.black)
+                .foregroundStyle(Color("textColor"))
                 
                 //likes label
                 Text("\(post.likes) likes")
