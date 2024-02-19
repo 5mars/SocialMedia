@@ -19,6 +19,7 @@
 		0D514B712B81A375003F4407 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D514B702B81A375003F4407 /* UserStatView.swift */; };
 		0D514B732B81AD75003F4407 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D514B722B81AD75003F4407 /* FeedView.swift */; };
 		0D514B752B81AD7A003F4407 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D514B742B81AD7A003F4407 /* FeedCell.swift */; };
+		0D514B772B82803C003F4407 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D514B762B82803C003F4407 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0D514B702B81A375003F4407 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		0D514B722B81AD75003F4407 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0D514B742B81AD7A003F4407 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		0D514B762B82803C003F4407 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		0D514B672B7EFD0E003F4407 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0D514B762B82803C003F4407 /* SearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				0D514B6E2B7EFF8B003F4407 /* ProfileView.swift in Sources */,
 				0D514B372B7EEBAB003F4407 /* ContentView.swift in Sources */,
 				0D514B352B7EEBAB003F4407 /* SocialMediaApp.swift in Sources */,
+				0D514B772B82803C003F4407 /* SearchView.swift in Sources */,
 				0D514B712B81A375003F4407 /* UserStatView.swift in Sources */,
 				0D514B732B81AD75003F4407 /* FeedView.swift in Sources */,
 				0D514B6C2B7EFE2E003F4407 /* MainTabView.swift in Sources */,
