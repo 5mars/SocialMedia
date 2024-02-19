@@ -27,6 +27,8 @@
 		0DE13C672B83BB0100A19D6D /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C662B83BB0100A19D6D /* CreatePasswordView.swift */; };
 		0DE13C692B83BB7700A19D6D /* SignUpFlowTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C682B83BB7700A19D6D /* SignUpFlowTemplateView.swift */; };
 		0DE13C6B2B83BE0D00A19D6D /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C6A2B83BE0D00A19D6D /* CompleteSignUpView.swift */; };
+		0DE13C6D2B83CC8F00A19D6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C6C2B83CC8F00A19D6D /* User.swift */; };
+		0DE13C6F2B83D53700A19D6D /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C6E2B83D53700A19D6D /* CurrentUserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		0DE13C662B83BB0100A19D6D /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		0DE13C682B83BB7700A19D6D /* SignUpFlowTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlowTemplateView.swift; sourceTree = "<group>"; };
 		0DE13C6A2B83BE0D00A19D6D /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
+		0DE13C6C2B83CC8F00A19D6D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0DE13C6E2B83D53700A19D6D /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 		0D514B602B7EFC89003F4407 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DE13C6C2B83CC8F00A19D6D /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				0D514B6D2B7EFF8B003F4407 /* ProfileView.swift */,
+				0DE13C6E2B83D53700A19D6D /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				0DE13C6B2B83BE0D00A19D6D /* CompleteSignUpView.swift in Sources */,
 				0D514B6E2B7EFF8B003F4407 /* ProfileView.swift in Sources */,
 				0DE13C692B83BB7700A19D6D /* SignUpFlowTemplateView.swift in Sources */,
+				0DE13C6D2B83CC8F00A19D6D /* User.swift in Sources */,
 				0D514B372B7EEBAB003F4407 /* ContentView.swift in Sources */,
 				0D514B792B82D4AD003F4407 /* LoginView.swift in Sources */,
 				0D514B352B7EEBAB003F4407 /* SocialMediaApp.swift in Sources */,
@@ -417,6 +424,7 @@
 				0DE13C632B83B88C00A19D6D /* TextFieldModifier.swift in Sources */,
 				0D514B6C2B7EFE2E003F4407 /* MainTabView.swift in Sources */,
 				0DE13C672B83BB0100A19D6D /* CreatePasswordView.swift in Sources */,
+				0DE13C6F2B83D53700A19D6D /* CurrentUserProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

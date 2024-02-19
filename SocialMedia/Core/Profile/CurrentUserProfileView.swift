@@ -1,22 +1,21 @@
 import SwiftUI
 
-struct ProfileView: View {
-    
-    let user: User
-    
+struct CurrentUserProfileView: View {
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1)
     ]
     
+    
     var body: some View {
+        NavigationStack {
             ScrollView {
                 // header
                 VStack(spacing: 10) {
                     // pic and stats
                     HStack {
-                        Image(user.profileImageUrl ?? "")
+                        Image("restarted")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 80, height: 80)
@@ -29,23 +28,18 @@ struct ProfileView: View {
                             UserStatView(value: 10, title: "Posts")
                             
                             UserStatView(value: 69, title: "Followers")
-
+                            
                             UserStatView(value: 69, title: "Following")
                         }
                     }
                     
                     // name and bio
                     VStack(alignment: .leading, spacing: 4) {
-                        if let fullName = user.fullName {
-                            Text(fullName)
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                        }
-                        
-                        if let bio = user.bio {
-                            Text(bio)
-                                .font(.footnote)
-                        }
+                        Text("Jeremy Cinq-Mars")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                        Text("This is my bio")
+                            .font(.footnote)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -80,9 +74,20 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
         }
     }
+}
 
 #Preview {
-    ProfileView(user: User.MOCK_USER[1])
+    CurrentUserProfileView()
 }
