@@ -41,6 +41,8 @@
 		0DE13C842B8408C300A19D6D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0DE13C832B8408C300A19D6D /* FirebaseStorage */; };
 		0DE13C882B841B6700A19D6D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C872B841B6700A19D6D /* AuthService.swift */; };
 		0DE13C8C2B841CA400A19D6D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C8B2B841CA400A19D6D /* ContentViewModel.swift */; };
+		0DE13C8F2B84245800A19D6D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C8E2B84245800A19D6D /* RegistrationViewModel.swift */; };
+		0DE13C912B85511B00A19D6D /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE13C902B85511B00A19D6D /* LogInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		0DE13C7A2B84075F00A19D6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0DE13C872B841B6700A19D6D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0DE13C8B2B841CA400A19D6D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0DE13C8E2B84245800A19D6D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		0DE13C902B85511B00A19D6D /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +240,9 @@
 		0D514B642B7EFCD9003F4407 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				0DE13C862B841B5700A19D6D /* Service */,
 				0DE13C852B841B3E00A19D6D /* View */,
+				0DE13C8D2B84244400A19D6D /* ViewModel */,
+				0DE13C862B841B5700A19D6D /* Service */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -338,6 +343,15 @@
 			isa = PBXGroup;
 			children = (
 				0DE13C8B2B841CA400A19D6D /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0DE13C8D2B84244400A19D6D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0DE13C8E2B84245800A19D6D /* RegistrationViewModel.swift */,
+				0DE13C902B85511B00A19D6D /* LogInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -502,9 +516,11 @@
 				0D514B732B81AD75003F4407 /* FeedView.swift in Sources */,
 				0DE13C632B83B88C00A19D6D /* TextFieldModifier.swift in Sources */,
 				0DE13C772B83E65200A19D6D /* UploadPostView.swift in Sources */,
+				0DE13C8F2B84245800A19D6D /* RegistrationViewModel.swift in Sources */,
 				0D514B6C2B7EFE2E003F4407 /* MainTabView.swift in Sources */,
 				0DE13C712B83D88A00A19D6D /* Post.swift in Sources */,
 				0DE13C672B83BB0100A19D6D /* CreatePasswordView.swift in Sources */,
+				0DE13C912B85511B00A19D6D /* LogInViewModel.swift in Sources */,
 				0DE13C6F2B83D53700A19D6D /* CurrentUserProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,7 +50,7 @@ struct MainTabView: View {
                 }
                 .tag(4)
         }
-        .tint(.black)
+        .tint(Color("textColor"))
     }
 }
 

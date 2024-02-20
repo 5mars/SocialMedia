@@ -6,6 +6,8 @@ struct UploadPostView: View {
     @State private var imagePickerPresented = false
     @StateObject var viewModel = UploadPostViewModel()
     @Binding var tabIndex: Int
+    @FocusState var isFocused: Bool
+    
     var body: some View {
         VStack {
             //action tool bar
@@ -34,6 +36,7 @@ struct UploadPostView: View {
                 }
             }
             .padding(.horizontal)
+            .foregroundStyle(Color("textColor"))
             
             // post image and caption
             HStack(spacing: 8) {
@@ -47,6 +50,22 @@ struct UploadPostView: View {
                 }
                 
                 TextField("Enter your caption...", text: $caption, axis: .vertical)
+                    .focused($isFocused)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            HStack {
+                                Spacer()
+                                
+                                Button {
+                                    isFocused = false
+                                } label: {
+                                    Text("Done")
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.blue)
+                                }
+                            }
+                        }
+                    }
             }
             .padding()
             

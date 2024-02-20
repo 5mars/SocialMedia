@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    
+    @StateObject var viewModel = LogInViewModel()
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -16,11 +15,12 @@ struct LoginView: View {
                 
                 //text fields
                 VStack {
-                    TextField("Enter your email", text: $email)
+                    TextField("Enter your email", text: $viewModel.email)
                         .textInputAutocapitalization(.none)
                         .modifier(TextFieldModifier())
+                        .keyboardType(.emailAddress)
                     
-                    SecureField("Enter your password", text: $password)
+                    SecureField("Enter your password", text: $viewModel.password)
                         .modifier(TextFieldModifier())
                 }
                 
@@ -36,7 +36,9 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Button {
-                    print("Login")
+                    Task {
+                        try await viewModel.signIn()
+                    }
                 } label: {
                     Text("Login")
                         .font(.subheadline)
@@ -50,14 +52,14 @@ struct LoginView: View {
                 
                 HStack {
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(width: .infinity, height: 0.5)
+                        .frame(width: 130, height: 1)
                     
                     Text("OR")
                         .font(.footnote)
                         .fontWeight(.semibold)
                     
                     Rectangle()
-                        .frame(width: .infinity, height: 0.5)
+                        .frame(width: 130, height: 1)
                 }
                 .foregroundStyle(.gray)
                 .padding(.horizontal)
