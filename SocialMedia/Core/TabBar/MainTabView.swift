@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct MainTabView: View {
+    let user: User
     @State private var selectedIndex = 0
+    
     var body: some View {
         TabView(selection: $selectedIndex) {
             /// NOTE : Instead of doing onAppear in manually select the index you could put all your tab in some sort of enum and refer to it here
@@ -41,7 +43,8 @@ struct MainTabView: View {
                 }
                 .tag(3)
             
-            CurrentUserProfileView(user: User.MOCK_USER[1])
+            // pass the user var to this currentProfileView
+            CurrentUserProfileView(user: user)
                 .onAppear {
                     selectedIndex = 4
                 }
@@ -55,5 +58,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(user: User.MOCK_USER[1])
 }

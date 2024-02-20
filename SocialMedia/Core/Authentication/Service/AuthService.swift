@@ -8,11 +8,14 @@ import FirebaseFirestoreSwift
 class AuthService {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     static let shared = AuthService()
     
     init() {
-        self.userSession = Auth.auth().currentUser
+        Task {
+            try await loadUserData()
+        }
     }
     
     @MainActor
@@ -20,6 +23,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            try await loadUserData() //load user data
         } catch {
             print("DEBUG: Failed to LOG IN user with error \(error.localizedDescription)")
         }
@@ -29,27 +33,33 @@ class AuthService {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            print("DEBUG: ✅ Successfully created user!")
+            
             await self.uploadUserData(uid: result.user.uid, username: username, email: email)
-            print("DEBUG: ✅ Successfully uploaded user data!")
+            
         } catch {
             print("DEBUG: Failed to REGISTER user with error \(error.localizedDescription)")
         }
-        
-        
     }
     
+    @MainActor
     func loadUserData() async throws {
-        
+        self.userSession = Auth.auth().currentUser
+        guard let currentUid = userSession?.uid else { return }
+        let snapshot = try await Firestore.firestore().collection("users").document(currentUid).getDocument()
+        //how you decode the current user data-ish?
+        self.currentUser = try? snapshot.data(as: User.self)
     }
     
     func signOut() {
         try? Auth.auth().signOut()
         self.userSession = nil
+        self.currentUser = nil//wipe the current user data
     }
     
     private func uploadUserData(uid: String, username: String, email: String) async {
         let user = User(id: uid, username: username, email: email)
+        self.currentUser = user
+        //how you encode the user info with firestore
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
         
         try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
