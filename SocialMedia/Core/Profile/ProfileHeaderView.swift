@@ -12,6 +12,7 @@ struct ProfileHeaderView: View {
                     .scaledToFill()
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
+                    .shadow(radius: 5)
                 
                 Spacer()
                 
@@ -39,20 +40,27 @@ struct ProfileHeaderView: View {
                 }
                 Text(user.username) //testing purposes!!
             }
+            .foregroundStyle(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             
             // action button
             Button(action: {
-                
+                if user.isCurrentUser {
+                    print("Show edit profile")
+                } else {
+                    print("Follow user")
+                }
             }, label: {
-                Text("Edit Profile")
+                Text(user.isCurrentUser ? "Edit Profile" : "Follow")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity, minHeight: 32)
-                    .foregroundStyle(Color("textColor"))
+                    .background(user.isCurrentUser ? Color("BgColor") : .blue)
+                    .foregroundStyle(user.isCurrentUser ? Color("textColor") : .white)
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
                     .overlay {
                         RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color.gray, lineWidth: 1.0)
+                            .stroke(user.isCurrentUser ? Color.gray : Color.clear, lineWidth: 1.0)
                     }
             })
             Divider()
@@ -63,4 +71,9 @@ struct ProfileHeaderView: View {
 
 #Preview {
     ProfileHeaderView(user: User.MOCK_USER[1])
+        .background {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundStyle(Color("BgColor"))
+        }
 }

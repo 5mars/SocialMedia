@@ -13,6 +13,7 @@ struct FeedCell: View {
                         .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 40, height: 40)
+                        .shadow(radius: 5)
                     
                     Text(user.username)
                         .font(.footnote)
@@ -87,4 +88,9 @@ struct FeedCell: View {
 
 #Preview {
     FeedCell(post: Post.MOCK_POSTS[1])
+        .background {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundStyle(Color("BgColor"))
+        }
 }

@@ -11,6 +11,11 @@ struct FeedView: View {
                     .padding(.top, 8)
                 }
             }
+            .background {
+                Rectangle()
+                    .ignoresSafeArea()
+                    .foregroundStyle(Color("BgColor"))
+            }
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

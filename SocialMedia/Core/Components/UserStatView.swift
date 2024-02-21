@@ -12,7 +12,7 @@ struct UserStatView: View {
             Text(title)
                 .font(.footnote)
         }
-        .foregroundStyle(Color("textColor"))
+        .foregroundStyle(.white)
         .frame(width: 72)
     }
 }

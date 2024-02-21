@@ -16,6 +16,11 @@ struct CurrentUserProfileView: View {
                 //post grid view
                 PostGridView(posts: posts)
             }
+            .background {
+                Rectangle()
+                    .ignoresSafeArea()
+                    .foregroundStyle(Color("BgColor"))
+            }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

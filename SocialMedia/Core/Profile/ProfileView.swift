@@ -18,6 +18,11 @@ struct ProfileView: View {
                 
                 
             }
+            .background {
+                Rectangle()
+                    .ignoresSafeArea()
+                    .foregroundStyle(Color("BgColor"))
+            }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
         }

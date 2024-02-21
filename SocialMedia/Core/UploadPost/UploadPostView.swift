@@ -33,6 +33,7 @@ struct UploadPostView: View {
                 } label: {
                     Text("Upload")
                         .fontWeight(.semibold)
+                        .foregroundStyle(.blue)
                 }
             }
             .padding(.horizontal)
@@ -70,6 +71,11 @@ struct UploadPostView: View {
             .padding()
             
             Spacer()
+        }
+        .background {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundStyle(Color("BgColor"))
         }
         .onAppear {
             imagePickerPresented.toggle()
