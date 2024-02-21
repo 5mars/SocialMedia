@@ -21,6 +21,15 @@ class EditProfileViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
+        
+        /// So that the text for the full name is already there whenever you click on edit profile
+        if let fullname = user.fullname {
+            self.fullname = fullname
+        }
+        /// Same thing but for the bio text
+        if let bio = user.bio {
+            self.bio = bio
+        }
     }
     
     func loadImage(fromItem item: PhotosPickerItem?) async {
@@ -44,16 +53,19 @@ class EditProfileViewModel: ObservableObject {
         if let uiImage = uiImage {
             let imageUrl = try? await ImageUploader.uploadImage(image: uiImage)
             data["profileImageUrl"] = imageUrl
+            print("update user data kicks in : Image changed")
         }
         // update full name if change
         if !fullname.isEmpty && user.fullname != fullname {
             user.fullname = fullname
             data["fullname"] = fullname
+            print("update user data kicks in : name changed")
         }
         // update bio if change
         if !bio.isEmpty && user.bio != bio {
             user.bio = bio
             data["bio"] = bio
+            print("update user data kicks in : bio changed")
         }
         
         if !data.isEmpty {

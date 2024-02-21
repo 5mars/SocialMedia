@@ -22,6 +22,7 @@ struct SignUpFlowTemplateView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
+                .foregroundStyle(.white)
             
             Text(description)
                 .font(.footnote)
@@ -58,6 +59,11 @@ struct SignUpFlowTemplateView: View {
             .navigationBarBackButtonHidden()
             
             Spacer()
+        }
+        .background {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundStyle(Color("BgColor"))
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

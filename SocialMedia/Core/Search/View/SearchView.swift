@@ -10,12 +10,8 @@ struct SearchView: View {
                     ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack() {
-                                Image(systemName: "person.circle")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundStyle(.gray)
-                                    .scaledToFill()
-                                    .clipShape(Circle())
+
+                                CircularProfileImageView(user: user, size: .xSmall)
                                 
                                 VStack(alignment: .leading) {
                                     Text(user.username)
